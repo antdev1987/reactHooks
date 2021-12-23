@@ -7,11 +7,15 @@ const useFetch =(url)=>{
     const [state,setState] =useState({loading:true,data:null,error:null})
 
     useEffect(()=>{
+
+        setState({loading:true,data:null,error:null})
+
         fetching()
     },[url])
 
 
     const fetching =async()=>{
+
         const resp = await fetch(url)
         const data = await resp.json()
 
